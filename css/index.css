@@ -1,0 +1,466 @@
+/*============GERAIS===============*/
+:root {
+  --very-dark-blue:#0B2230;
+  --dark-blue:#014D54;
+  --medium-blue:#0A8282;
+  --light-blue:#7EBBC2;
+  --bluish-gray:#E0E4E7;
+  --white:#FFFFFF;
+  --black:#000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bluish-gray);
+}
+
+/*==============Header==================*/
+.main_header {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Para separar os itens */
+  padding: 0px 150px;
+  z-index: 9999;
+}
+
+.Logo {
+  margin-top: 1.5rem;
+  width: 120px;
+  height: 65px;
+  transition: all 0.5s ease;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  margin-left: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul a:hover {
+  border-bottom: 0.5px solid #fff;
+}
+
+/*================ main =============*/
+main {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.card {
+  background-color: #014D54;
+  width: 850px;
+  height: 500px;
+  margin: 60px;
+  display: flex;
+  color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.card-right-info {
+  display: flex;
+  gap: 20px;
+  width: 400px;
+}
+
+.imagem-homem {
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+.card-left-bottom {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  align-items: center;
+  width: 330px;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.explorer {
+  background-color: #7EBBC2;
+  color: #fff;
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+strong {
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+strong p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.explorer:hover {
+  cursor: pointer;
+  background-color: #04a6b5;
+}
+
+.Voltar .bubbly-button {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #0A8282;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px var(--light-blue);
+}
+.Voltar .bubbly-button:focus {
+  outline: 0;
+}
+.Voltar .bubbly-button:before, .Voltar .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.Voltar .bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, transparent 20%, #0A8282 20%, transparent 30%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, transparent 10%, #0A8282 15%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+}
+.Voltar .bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, transparent 10%, #0A8282 15%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.Voltar .bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #086a6a;
+  box-shadow: 0 2px 25px var(--medium-blue);
+}
+.Voltar .bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.Voltar .bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main_header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-container {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .Voltar {
+    margin-top: 1rem;
+    align-self: center;
+  }
+  .card {
+    flex-direction: column-reverse;
+    height: 700px;
+    align-items: center;
+  }
+  .card-right-info {
+    margin-bottom: 40px;
+  }
+  .imagem-homem {
+    width: 300px;
+  }
+}
+/*=============Footer==================*/
+.main_footer {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-size: 1em;
+  width: 100%;
+  margin-top: auto;
+}
+
+.main_footer .content {
+  width: 80%;
+  margin: 0 10%;
+  padding: 5em 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5em 0;
+}
+
+.container {
+  float: left;
+  width: 100%;
+}
+
+.colfooter {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-bottom: 2em;
+}
+
+.colfooter ul {
+  width: 100%;
+  float: left;
+  list-style: none;
+}
+
+.colfooter ul li {
+  padding: 0.2em 0em;
+}
+
+.colfooter ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1em;
+  transition: 0.2s;
+}
+
+.colfooter ul li a i {
+  font-size: 0.5em;
+}
+
+.colfooter ul li a:hover {
+  color: var(--light-blue);
+}
+
+.colfooter .titleFooter {
+  font-size: 1.3em;
+  color: var(--white);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px var(--bluish-gray) solid;
+}
+
+.colfooter p {
+  color: var(--white);
+  font-size: 1em;
+  height: 25px;
+}
+
+.colfooter .redesocial {
+  color: var(--white);
+  float: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-bottom: 7px;
+  transition: 0.2s;
+}
+
+.colfooter .redesocial:hover {
+  color: var(--light-blue);
+  transition: 0.2s;
+}
+
+.main_footer_copy {
+  background-color: var(--very-dark-blue);
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 1.5em 0em;
+}
+
+.main_footer_copy p {
+  font-size: 1em;
+  color: var(--white);
+  height: 20px;
+}
+
+.main_footer_copy .m-b-footer {
+  margin-bottom: 0.5em;
+}
+
+.main_footer_copy .by {
+  font-size: 0.96em;
+}
+
+.main_footer_copy .by a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.main_footer_copy .by a:hover {
+  text-decoration: underline;
+  color: var(--light-blue);
+}
+
+.main_footer_copy .by i {
+  font-size: 0.96em;
+  margin-right: 3px;
+}
+
+/* Responsividade para o elemento main */
+main {
+  width: 30%; /* Reduzindo a largura do main para dispositivos menores */
+  margin: 0 auto; /* Centralizando o main na tela */
+}
+/*Responsivo*/
+/*768PX BREAKPOINT*/
+@media (max-width: 768px) {
+  /* Ajustes para dispositivos menores que 768px de largura */
+
+  .card {
+    width: 90%; /* Reduzindo a largura do card para dispositivos menores */
+    margin: 10px auto; /* Centralizando o card na tela */
+  }
+
+  main {
+    width: 100%; /* Alterando a largura do main para ocupar toda a largura da tela */
+  }
+
+  .main_header {
+    width: 100%;
+    padding: 10px 0; /* Ajustando o padding para dispositivos menores */
+  }
+
+  .Logo {
+    width: 80px; /* Reduzindo o tamanho da logo para dispositivos menores */
+    height: auto;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .card-left, .card-right {
+    width: 100%; /* Garantindo que os elementos dentro do card ocupem toda a largura */
+    text-align: center; /* Centralizando o conteúdo dentro do card */
+  }
+
+  .imagem-homem {
+    max-width: 100%; /* Evitando que a imagem ultrapasse a largura do card */
+    height: auto; /* Mantendo a proporção da imagem */
+    margin-bottom: 10px; /* Adicionando margem inferior para separação */
+  }
+
+  .main_footer {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .main_footer .content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em 0; /* Reduzindo o padding do footer para dispositivos menores */
+  }
+
+  .colfooter {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px; /* Reduzindo a margem inferior do footer para dispositivos menores */
+  }
+
+  .main_footer_copy p {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 48em) {
+  /* Ajustes para dispositivos maiores ou iguais a 768px de largura */
+
+  .main_footer .content {
+    float: left;
+    width: 80%;
+    margin: 0 10%;
+    padding: 5em 0;
+  }
+
+  .colfooter {
+    width: 30%;
+    margin-right: 5%;
+    margin-bottom: 0;
+  }
+
+  .colfooter:nth-of-type(3n+0) {
+    margin-right: 0;
+    border-right: 0;
+  }
+}

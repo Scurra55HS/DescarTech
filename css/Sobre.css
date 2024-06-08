@@ -1,0 +1,582 @@
+/*============GERAIS===============*/
+:root {
+  --very-dark-blue:#0B2230;
+  --dark-blue:#014D54;
+  --medium-blue:#0A8282;
+  --light-blue:#7EBBC2;
+  --bluish-gray:#E0E4E7;
+  --white:#FFFFFF;
+  --black:#000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bluish-gray);
+}
+
+/*==============Header==================*/
+.main_header {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Para separar os itens */
+  padding: 0px 150px;
+  z-index: 9999;
+}
+
+.Logo {
+  margin-top: 1.5rem;
+  width: 120px;
+  height: 65px;
+  transition: all 0.5s ease;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  margin-left: 1rem;
+}
+
+.Voltar .bubbly-button {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #0A8282;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px var(--light-blue);
+}
+.Voltar .bubbly-button:focus {
+  outline: 0;
+}
+.Voltar .bubbly-button:before, .Voltar .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.Voltar .bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, transparent 20%, #0A8282 20%, transparent 30%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, transparent 10%, #0A8282 15%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+}
+.Voltar .bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, transparent 10%, #0A8282 15%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%), radial-gradient(circle, #0A8282 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.Voltar .bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #086a6a;
+  box-shadow: 0 2px 25px var(--medium-blue);
+}
+.Voltar .bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.Voltar .bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main_header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-container {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .Voltar {
+    margin-top: 1rem;
+    align-self: center;
+  }
+}
+/*============== Card =================*/
+.main_card {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 150px;
+}
+
+.card-limited {
+  max-width: 350px;
+}
+
+.card-limited h1 {
+  margin-bottom: 10px;
+}
+
+.card-container {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.card .front-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card .front-content p {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, var(--light-blue) 0%, var(--very-dark-blue) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: linear-gradient(-45deg, var(--light-blue) 0%, var(--very-dark-blue) 100%);
+  color: var(--bluish-gray);
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateY(96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+.card:hover .front-content {
+  transform: translateY(-30%);
+}
+
+.card:hover .front-content p {
+  opacity: 0;
+}
+
+/*================Img===================*/
+.idrolise_reversa {
+  margin: 0px 150px;
+  width: 69%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/*===============Info==================*/
+.info {
+  margin: 50px 150px;
+}
+
+/*===============Bloom=================*/
+.card-security {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between; /* Para separar os itens */
+  padding: 0px 150px;
+}
+
+.card-end {
+  width: 300px;
+  height: 300px;
+  background-color: var(--light-blue);
+  background-image: linear-gradient(43deg, var(--light-blue) 0%, var(--dark-blue) 46%, var(--medium-blue) 100%);
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.card-content {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.card-content .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.card-content .card-para {
+  color: inherit;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.card-end:hover {
+  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-end:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+.card-end:hover:before {
+  transform: translateX(-100%);
+}
+
+.card-end:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+.card-end:hover:after {
+  transform: translateX(100%);
+}
+
+.logo-redes {
+  width: 300px;
+  height: 300px;
+}
+
+/*=============Footer==================*/
+.main_footer {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-size: 1em;
+  width: 100%;
+  margin-top: auto;
+}
+
+.main_footer .content {
+  width: 80%;
+  margin: 0 10%;
+  padding: 5em 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5em 0;
+}
+
+.container {
+  float: left;
+  width: 100%;
+}
+
+.colfooter {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-bottom: 2em;
+}
+
+.colfooter ul {
+  width: 100%;
+  float: left;
+  list-style: none;
+}
+
+.colfooter ul li {
+  padding: 0.2em 0em;
+}
+
+.colfooter ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1em;
+  transition: 0.2s;
+}
+
+.colfooter ul li a i {
+  font-size: 0.5em;
+}
+
+.colfooter ul li a:hover {
+  color: var(--light-blue);
+}
+
+.colfooter .titleFooter {
+  font-size: 1.3em;
+  color: var(--white);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px var(--bluish-gray) solid;
+}
+
+.colfooter p {
+  color: var(--white);
+  font-size: 1em;
+  height: 25px;
+}
+
+.colfooter .redesocial {
+  color: var(--white);
+  float: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-bottom: 7px;
+  transition: 0.2s;
+}
+
+.colfooter .redesocial:hover {
+  color: var(--light-blue);
+  transition: 0.2s;
+}
+
+.main_footer_copy {
+  background-color: var(--very-dark-blue);
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 1.5em 0em;
+}
+
+.main_footer_copy p {
+  font-size: 1em;
+  color: var(--white);
+  height: 20px;
+}
+
+.main_footer_copy .m-b-footer {
+  margin-bottom: 0.5em;
+}
+
+.main_footer_copy .by {
+  font-size: 0.96em;
+}
+
+.main_footer_copy .by a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.main_footer_copy .by a:hover {
+  text-decoration: underline;
+  color: var(--light-blue);
+}
+
+.main_footer_copy .by i {
+  font-size: 0.96em;
+  margin-right: 3px;
+}
+
+/*Responsivo*/
+/*768PX BREAKPOINT*/
+@media (min-width: 48em) {
+  .main_footer .content {
+    float: left;
+    width: 80%;
+    margin: 0 10%;
+    padding: 5em 0;
+  }
+  .colfooter {
+    width: 30%;
+    margin-right: 5%;
+    margin-bottom: 0;
+  }
+  .colfooter:nth-of-type(3n+0) {
+    margin-right: 0;
+    border-right: 0;
+  }
+}
+/*==========Responsive==============*/
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+  .main_header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-container {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .Voltar {
+    margin-top: 1rem;
+    align-self: center;
+  }
+  .main_card {
+    flex-direction: column;
+    margin: 20px 10px; /* Aumenta a margem lateral dos textos */
+  }
+  .idrolise_reversa {
+    margin: 30px 10px; /* Aumenta a margem lateral dos textos */
+    width: 100%; /* Ocupa 100% do width */
+  }
+  .info {
+    margin: 20px 10px; /* Aumenta a margem lateral dos textos */
+  }
+  .card-security {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .card-end {
+    width: 90%;
+    margin: 20px 0;
+  }
+}
+/* Responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+  .main_header {
+    padding: 10px;
+  }
+  .main_card {
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-container {
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    padding: 100px;
+  }
+  .card {
+    height: auto;
+  }
+  .idrolise_reversa {
+    width: 100%; /* Ocupa 100% do width */
+  }
+  .info {
+    margin: 10px 10px; /* Aumenta a margem lateral dos textos */
+  }
+  .card-security {
+    padding: 10px;
+  }
+  .card-end {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .main_footer .content {
+    width: 100%;
+    margin: 0;
+    padding: 2em 0;
+  }
+  .colfooter {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+/*# sourceMappingURL=Sobre.css.map */
